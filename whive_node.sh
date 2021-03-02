@@ -185,7 +185,11 @@ clean () {
         rm -Rf ~/.whive
     fi
 
-     if [ -d ~/cpuminer-mc-yespower ]; then
+    if [ -d ~/whive ]; then
+        rm -Rf ~/whive
+    fi
+
+    if [ -d ~/cpuminer-mc-yespower ]; then
         rm -Rf ~/cpuminer-mc-yespower
     fi
 
