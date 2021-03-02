@@ -6,6 +6,8 @@ command="$1"
 
 quickstart () {
 
+    clean
+
     whive_get
 
     whive_dependencies
