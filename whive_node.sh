@@ -39,6 +39,7 @@ start () {
 # Get the whive repository
 whive_get () {
     
+    echo "Cloning the whive repository.........."
     cd ~
     sudo apt-get install git
     git clone https://github.com/whiveio/whive.git
@@ -48,6 +49,7 @@ whive_get () {
 # Install whive dependencies 
 whive_dependencies () {
 
+    echo "Installing the whive dependencies.........."
     sudo apt-get install -y build-essential libtool autotools-dev automake pkg-config bsdmainutils python3
     sudo apt-get install -y libssl-dev libevent-dev libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-test-dev libboost-thread-dev
 
@@ -56,6 +58,7 @@ whive_dependencies () {
 # Install whive dependencies for ubuntu
 whive_dependencies_ubuntu () {
 
+    echo "Installing whive dependencies for Ubuntu.........."
     sudo apt-get install -y software-properties-common
     sudo add-apt-repository ppa:bitcoin/bitcoin
     sudo apt-get update
@@ -66,6 +69,7 @@ whive_dependencies_ubuntu () {
 # Install whive dependencies for raspberry pi
 whive_dependencies_raspbian () {
 
+    echo "Installing whive dependencies for raspberry pi.........."
     sudo bash -c 'echo deb http://ppa.launchpad.net/bitcoin/bitcoin/ubuntu cosmic main >> /etc/apt/sources.list'
     sudo bash -c 'echo deb-src http://ppa.launchpad.net/bitcoin/bitcoin/ubuntu cosmic main >> /etc/apt/sources.list'
     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C70EF1F0305A1ADB9986DBD8D46F45428842CE5E
@@ -80,6 +84,7 @@ whive_dependencies_raspbian () {
 # Build whive
 whive_build () {
     
+    echo "Building whive............"
     cd ~
     cd whive
     ./autogen.sh
@@ -91,6 +96,7 @@ whive_build () {
 # Set up the whive configuration
 whive_config () {
     
+    echo "Setting up the whive configurations.........."
     cd ~
     mkdir .whive
     cd .whive
@@ -106,6 +112,7 @@ whive_config () {
 # Run whive
 whive_run () {
     
+    echo "Running whive............."
     cd ~
     cd whive/src
     whived -daemon
@@ -115,6 +122,7 @@ whive_run () {
 # Obtain a whive address and store it in a file
 whive_address () {
 
+    echo "Generating a whive address........"
     cd ~
     cd whive/src
     whive-cli getnewaddress > ~/.whive/whive.address
@@ -124,6 +132,7 @@ whive_address () {
 # Get the cpuminer
 cpuminer_get () {
     
+    echo "Getting the cpuminer........"
     cd ~
     git clone https://github.com/cryptozeny/cpuminer-mc-yespower.git
 
@@ -132,6 +141,7 @@ cpuminer_get () {
 # Install cpuminer dependencies
 cpuminer_dependencies () {
 
+    echo "Getting cpuminer dependencies.........."
     sudo apt-get install -y build-essential libcurl4-openssl-dev 
 
 }
@@ -140,6 +150,7 @@ cpuminer_dependencies () {
 # Build the cpuminer
 cpuminer_build () {
 
+    echo "Building the cpuminer.........."
     cd ~
     cd cpuminer-mc-yespower
     ./build.sh
@@ -149,6 +160,7 @@ cpuminer_build () {
 # Run a local cpuminer node
 cpuminer_run_local () {
 
+    echo "Running the cpuminer node.........."
     cd ~
     cd cpuminer-mc-yespower
     export WHIVE_ADDR=$(cat coordinator.seed)
@@ -158,6 +170,8 @@ cpuminer_run_local () {
 
 # Run a cpuminer node that joins a node
 cpuminer_run_pool () {
+
+    echo "Running cpuminer that joins a pool.........."
     cd ~
     cd cpuminer-mc-yespower
     ./minerd -a yespower -o stratum+tcp://34.73.100.13:3333 -u generateaddress.w1 -t 3
@@ -166,6 +180,8 @@ cpuminer_run_pool () {
 
 # Remove everything
 clean () {
+
+    echo "Creating a fresh build.........."
     cd ~
     sudo rm -rf .whive
 
