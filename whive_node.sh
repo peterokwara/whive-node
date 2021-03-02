@@ -181,9 +181,13 @@ cpuminer_run_pool () {
 # Remove everything
 clean () {
 
-    echo "Creating a fresh build.........."
-    cd ~
-    sudo rm -rf .whive
+    if [ -d ~/.whive ]; then
+        rm -Rf ~/.whive
+    fi
+
+     if [ -d ~/cpuminer-mc-yespower ]; then
+        rm -Rf ~/cpuminer-mc-yespower
+    fi
 
     # stop whived from running
     # stop cpuminer from running
