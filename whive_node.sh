@@ -23,8 +23,15 @@ quickstart () {
     cpuminer_dependencies
 
     cpuminer_build
-    
+
     cpuminer_run_local
+}
+
+start () {
+    
+    whive_run
+    cpuminer_run_local
+
 }
 
 # Get the whive repository
@@ -178,6 +185,9 @@ case "${command}" in
     ;;
         "quickstart")
     quickstart
+    ;;
+        "start")
+    start
     ;;
          "stop")
     stop
