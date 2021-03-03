@@ -52,11 +52,11 @@ whive_get () {
 whive_dependencies () {
 
     echo "Installing the whive dependencies.........."
-    set +e
     sudo apt-get install -y build-essential libtool autotools-dev automake pkg-config bsdmainutils python3
-    sudo apt-get install -y libssl-dev libevent-dev libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-test-dev libboost-thread-dev
+    sudo apt-get install -y libssl-dev libevent-dev libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-test-dev libboost-thread- || true
     sudo apt-get update --fix-missing
-    set -e
+    sudo apt-get install -y libssl-dev libevent-dev libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-test-dev libboost-thread-dev
+
 }
 
 # Install whive dependencies for ubuntu
