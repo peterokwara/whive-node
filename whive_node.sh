@@ -204,6 +204,10 @@ clean () {
         rm -Rf ~/cpuminer-mc-yespower
     fi
 
+    if [ -d ~/.install_db4.sh ]; then
+        rm -Rf ~/.install_db4.sh
+    fi
+
     # stop whived from running
     # stop cpuminer from running
 }
