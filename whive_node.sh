@@ -12,7 +12,7 @@ quickstart () {
 
     whive_dependencies
 
-    whive_dependencies_raspbian
+    whive_dependencies_berkelydb
 
     whive_build
 
@@ -55,6 +55,15 @@ whive_dependencies () {
     sudo apt-get install -y build-essential libtool autotools-dev automake pkg-config bsdmainutils python3
     sudo apt-get install -y libssl-dev libevent-dev libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-test-dev libboost-thread-dev
 
+}
+
+# Install whive dependency berkelydb
+whive_dependencies_berkelydb () {
+    
+    echo "Cloning, building and installing berkelydb.........."
+    cd ~
+    curl 'https://github.com/bitcoin/bitcoin/blob/master/contrib/install_db4.sh' > install_db4.sh
+    ./install_db4.sh
 }
 
 # Install whive dependencies for ubuntu
