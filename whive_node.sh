@@ -177,6 +177,14 @@ clean () {
         rm -Rf ~/.install_db4.sh
     fi
 
+    if [ -d ~/.db4 ]; then
+        rm -Rf ~/.db4
+    fi
+
+    if [ -d ~/.db-4.8.30.NC.tar.gz ]; then
+        rm -Rf ~/.db-4.8.30.NC.tar.gz
+    fi
+
     # stop whived from running
     # stop cpuminer from running
 }
