@@ -12,8 +12,6 @@ quickstart () {
 
     whive_dependencies
 
-    whive_dependencies_berkelydb
-
     whive_build
 
     whive_config
