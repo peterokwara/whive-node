@@ -54,44 +54,11 @@ whive_dependencies () {
     echo "Installing the whive dependencies.........."
     sudo apt-get install -y build-essential libtool autotools-dev automake pkg-config bsdmainutils python3
     sudo apt-get install -y libssl-dev libevent-dev libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-test-dev libboost-thread-dev
-
-}
-
-# Install whive dependency berkelydb
-whive_dependencies_berkelydb () {
-    
-    echo "Cloning, building and installing berkelydb.........."
     cd ~
     curl 'https://raw.githubusercontent.com/bitcoin/bitcoin/master/contrib/install_db4.sh' > install_db4.sh
     chmod +x ./install_db4.sh
     sleep 15
     ./install_db4.sh `pwd`
-}
-
-# Install whive dependencies for ubuntu
-whive_dependencies_ubuntu () {
-
-    echo "Installing whive dependencies for Ubuntu.........."
-    sudo apt-get install -y software-properties-common
-    sudo add-apt-repository ppa:bitcoin/bitcoin
-    sudo apt-get update
-    sudo apt-get install -y libdb4.8-dev libdb4.8++-dev
-
-}
-
-# Install whive dependencies for raspberry pi
-whive_dependencies_raspbian () {
-
-    echo "Installing whive dependencies for raspberry pi.........."
-    sudo bash -c 'echo deb http://ppa.launchpad.net/bitcoin/bitcoin/ubuntu cosmic main >> /etc/apt/sources.list'
-    sudo bash -c 'echo deb-src http://ppa.launchpad.net/bitcoin/bitcoin/ubuntu cosmic main >> /etc/apt/sources.list'
-    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C70EF1F0305A1ADB9986DBD8D46F45428842CE5E
-    sudo apt-get update
-    sudo apt-get install -y software-properties-common
-    sudo add-apt-repository ppa:bitcoin/bitcoin
-    sudo apt-get update
-    sudo apt-get install -y libdb4.8-dev libdb4.8++-dev
-
 }
 
 # Build whive
@@ -101,7 +68,7 @@ whive_build () {
     cd ~
     cd whive
     ./autogen.sh
-    ./configure BDB_LIBS="-L`pwd`/db4/lib -ldb_cxx-4.8" BDB_CFLAGS="-I`pwd`/db4/include"
+    ./configure BDB_LIBS="-L`pwd`/db4/lib -ldb_cxx-4.8" BDB_CFLAGS="-I`pwd`/db4/include" ...
     make
 
 }
