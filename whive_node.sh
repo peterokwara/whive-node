@@ -101,7 +101,7 @@ whive_build () {
     cd ~
     cd whive
     ./autogen.sh
-    ./configure
+    ./configure BDB_LIBS="-L`pwd`/db4/lib -ldb_cxx-4.8" BDB_CFLAGS="-I`pwd`/db4/include"
     make
 
 }
