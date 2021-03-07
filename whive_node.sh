@@ -62,7 +62,7 @@ whive_dependencies_berkelydb () {
     
     echo "Cloning, building and installing berkelydb.........."
     cd ~
-    curl 'https://github.com/bitcoin/bitcoin/blob/master/contrib/install_db4.sh' > install_db4.sh
+    curl 'https://raw.githubusercontent.com/bitcoin/bitcoin/master/contrib/install_db4.sh' > install_db4.sh
     ./install_db4.sh `pwd`
 }
 
