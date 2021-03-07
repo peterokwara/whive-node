@@ -59,6 +59,7 @@ whive_dependencies () {
     chmod +x ./install_db4.sh
     sleep 15
     ./install_db4.sh `pwd`
+    export BDB_PREFIX=`pwd`
 }
 
 # Build whive
@@ -68,7 +69,7 @@ whive_build () {
     cd ~
     cd whive
     ./autogen.sh
-    ./configure BDB_LIBS="-L`pwd`/db4/lib -ldb_cxx-4.8" BDB_CFLAGS="-I`pwd`/db4/include" ...
+    ./configure BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include" ...
     make
 
 }
