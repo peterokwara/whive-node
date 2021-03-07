@@ -64,6 +64,7 @@ whive_dependencies_berkelydb () {
     cd ~
     curl 'https://raw.githubusercontent.com/bitcoin/bitcoin/master/contrib/install_db4.sh' > install_db4.sh
     chmod +x ./install_db4.sh
+    sleep 15
     ./install_db4.sh `pwd`
 }
 
