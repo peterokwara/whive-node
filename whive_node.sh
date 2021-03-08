@@ -76,15 +76,17 @@ whive_config () {
     
     echo "Setting up the whive configurations.........."
     cd ~
-    mkdir .whive
-    cd .whive
-    echo "server=1" >> whive.conf
-    echo "daemon=1" >> whive.conf
-    echo "listen=1" >> whive.conf
-    echo "txindex=1" >> whive.conf
-    echo "rpcuser=whive" >> whive.conf
-    echo "rpcpassword=pass" >> whive.conf
-
+    if [ ! -d ~/.whive ]; then
+        mkdir .whive
+        cd .whive
+        echo "server=1" >> whive.conf
+        echo "daemon=1" >> whive.conf
+        echo "listen=1" >> whive.conf
+        echo "txindex=1" >> whive.conf
+        echo "rpcuser=whive" >> whive.conf
+        echo "rpcpassword=pass" >> whive.conf
+    fi
+    
 }
 
 # Run whive
