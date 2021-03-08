@@ -112,7 +112,7 @@ cpuminer_get () {
     
     echo "Getting the cpuminer........"
     cd ~
-    git clone https://github.com/cryptozeny/cpuminer-mc-yespower.git
+    git clone https://github.com/whiveio/cpuminer-mc-yespower.git
 
 }
 
