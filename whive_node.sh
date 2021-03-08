@@ -86,7 +86,7 @@ whive_config () {
         echo "rpcuser=whive" >> whive.conf
         echo "rpcpassword=pass" >> whive.conf
     fi
-    
+
 }
 
 # Run whive
