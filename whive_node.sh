@@ -131,7 +131,9 @@ cpuminer_build () {
     echo "Building the cpuminer.........."
     cd ~
     cd cpuminer-mc-yespower
-    ./build-ARMv7l.sh
+
+    # Specific for raspberry pi
+    ./build-ARMv7l.sh 
 
 }
 
