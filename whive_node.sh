@@ -161,10 +161,6 @@ cpuminer_run_pool () {
 # Remove everything
 clean () {
 
-    if [ -d ~/.whive ]; then
-        rm -Rf ~/.whive
-    fi
-
     if [ -d ~/whive ]; then
         rm -Rf ~/whive
     fi
