@@ -186,7 +186,10 @@ clean () {
     fi
 
     # stop whived from running
+    pkill -9 whived
+
     # stop cpuminer from running
+    pkill -9 minerd
 }
 
 
