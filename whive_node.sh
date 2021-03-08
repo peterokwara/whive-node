@@ -131,7 +131,7 @@ cpuminer_build () {
     echo "Building the cpuminer.........."
     cd ~
     cd cpuminer-mc-yespower
-    ./build.sh
+    ./build-ARMv7l.sh
 
 }
 
