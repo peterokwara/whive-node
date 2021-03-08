@@ -103,7 +103,7 @@ whive_address () {
     echo "Generating a whive address........"
     cd ~
     cd whive/src
-    whive-cli getnewaddress > ~/.whive/whive.address
+    ./whive-cli getnewaddress > ~/.whive/whive.address
 
 }
 
