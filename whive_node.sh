@@ -41,7 +41,6 @@ whive_get () {
     
     echo "Cloning the whive repository.........."
     cd ~
-    sudo apt-get install git
     git clone https://github.com/whiveio/whive.git
 
 }
