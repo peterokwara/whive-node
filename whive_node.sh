@@ -93,7 +93,7 @@ whive_run () {
     echo "Running whive............."
     cd ~
     cd whive/src
-    whived -daemon
+    ./whived -daemon
 
 }
 
