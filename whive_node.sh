@@ -146,7 +146,7 @@ cpuminer_run_local () {
     cd ~
     cd cpuminer-mc-yespower
     export WHIVE_ADDR=$(cat ~/.whive/whive.address)
-    ./minerd -a yespower -o http://127.0.0.1:1867 -u whive -p pass --no-longpoll --no-getwork --no-stratum  --coinbase-addr=$WHIVE_ADDR -t 3
+    ./minerd -a yespower -o http://127.0.0.1:1867 -u whive -p pass --no-longpoll --no-getwork --no-stratum  --coinbase-addr=$WHIVE_ADDR -t 3 &
 
 }
 
