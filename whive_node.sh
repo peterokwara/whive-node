@@ -163,6 +163,8 @@ cpuminer_run_pool () {
 # Remove everything
 clean () {
 
+    echo "Removing unnecessary directories, stopping processes"
+
     if [ -d ~/whive ]; then
         rm -Rf ~/whive
     fi
@@ -184,10 +186,10 @@ clean () {
     fi
 
     # stop whived from running
-    pkill -9 whived
+    pkill -9 whived || true
 
     # stop cpuminer from running
-    pkill -9 minerd
+    pkill -9 minerd || true
 }
 
 
