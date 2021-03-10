@@ -193,7 +193,7 @@ clean () {
 
 # Show help
 help () {
-  echo "usage: private-ipfs.sh [quickstart|stop]"
+  echo "usage: private-ipfs.sh [quickstart|start|stop]"
 }
 
 
