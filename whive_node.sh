@@ -32,6 +32,7 @@ quickstart () {
 start () {
     
     whive_run
+    whive_address
     cpuminer_run_local
 
 }
