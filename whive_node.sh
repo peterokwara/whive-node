@@ -46,6 +46,10 @@ stop () {
     pkill -9 minerd || true
 }
 
+balance () {
+    curl --user whive --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getbalance", "params": ["*", 6] }' -H 'content-type: text/plain;' http://127.0.0.1:1867/
+}
+
 # Get the whive repository
 whive_get () {
     
@@ -201,7 +205,7 @@ clean () {
 
 # Show help
 help () {
-  echo "usage: private-ipfs.sh [quickstart|start|stop]"
+  echo "usage: private-ipfs.sh [quickstart|start|stop|balance]"
 }
 
 
@@ -215,6 +219,9 @@ case "${command}" in
     ;;
         "start")
     start
+    ;;
+        "balance")
+    balance
     ;;
          "stop")
     stop
