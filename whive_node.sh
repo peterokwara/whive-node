@@ -37,6 +37,15 @@ start () {
 
 }
 
+stop () {
+    
+    # stop whived from running
+    pkill -9 whived || true
+
+    # stop cpuminer from running
+    pkill -9 minerd || true
+}
+
 # Get the whive repository
 whive_get () {
     
@@ -186,11 +195,7 @@ clean () {
         rm -Rf ~/.db-4.8.30.NC.tar.gz
     fi
 
-    # stop whived from running
-    pkill -9 whived || true
-
-    # stop cpuminer from running
-    pkill -9 minerd || true
+    stop
 }
 
 
