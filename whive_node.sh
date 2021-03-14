@@ -6,6 +6,8 @@ command="$1"
 
 quickstart () {
 
+    echo "Installing whive from scratch..."
+    
     clean
 
     whive_get
@@ -31,6 +33,7 @@ quickstart () {
 
 start () {
     
+    echo "Starting whived and minerd..."
     whive_run
     sleep 15
     whive_address
@@ -39,22 +42,27 @@ start () {
 }
 
 stop () {
+
+    echo "Stopping whived and minerd..."
     
     # stop whived from running
     pkill -9 whived || true
-
+    
     # stop cpuminer from running
     pkill -9 minerd || true
 }
 
 balance () {
+
+    echo "Fetching wallet balance..."
     curl --user whive --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getbalance", "params": ["*", 6] }' -H 'content-type: text/plain;' http://127.0.0.1:1867/
+
 }
 
 # Get the whive repository
 whive_get () {
     
-    echo "Cloning the whive repository.........."
+    echo "Cloning the whive repository..."
     cd ~
     git clone https://github.com/whiveio/whive.git
 
@@ -63,7 +71,7 @@ whive_get () {
 # Install whive dependencies 
 whive_dependencies () {
 
-    echo "Installing the whive dependencies.........."
+    echo "Installing the whive dependencies..."
     sudo apt-get install -y build-essential libtool autotools-dev automake pkg-config bsdmainutils python3
     sudo apt-get install -y libssl-dev libevent-dev libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-test-dev libboost-thread-dev
     cd ~
@@ -77,7 +85,7 @@ whive_dependencies () {
 # Build whive
 whive_build () {
     
-    echo "Building whive............"
+    echo "Building whive..."
     cd ~
     cd whive
     ./autogen.sh
@@ -89,7 +97,7 @@ whive_build () {
 # Set up the whive configuration
 whive_config () {
     
-    echo "Setting up the whive configurations.........."
+    echo "Setting up whive configurations..."
     cd ~
     if [ ! -d ~/.whive ]; then
         mkdir .whive
@@ -107,7 +115,7 @@ whive_config () {
 # Run whive
 whive_run () {
     
-    echo "Running whive............."
+    echo "Running whive..."
     cd ~
     cd whive/src
     ./whived -daemon
@@ -117,7 +125,7 @@ whive_run () {
 # Obtain a whive address and store it in a file
 whive_address () {
 
-    echo "Generating a whive address........"
+    echo "Generating a whive address..."
     cd ~
     cd whive/src
     ./whive-cli getnewaddress > ~/.whive/whive.address
@@ -127,7 +135,7 @@ whive_address () {
 # Get the cpuminer
 cpuminer_get () {
     
-    echo "Getting the cpuminer........"
+    echo "Getting the cpuminer..."
     cd ~
     git clone https://github.com/whiveio/cpuminer-mc-yespower.git
 
@@ -136,7 +144,7 @@ cpuminer_get () {
 # Install cpuminer dependencies
 cpuminer_dependencies () {
 
-    echo "Getting cpuminer dependencies.........."
+    echo "Getting cpuminer dependencies..."
     sudo apt-get install -y build-essential libcurl4-openssl-dev 
 
 }
@@ -145,7 +153,7 @@ cpuminer_dependencies () {
 # Build the cpuminer
 cpuminer_build () {
 
-    echo "Building the cpuminer.........."
+    echo "Building the cpuminer..."
     cd ~
     cd cpuminer-mc-yespower
 
@@ -157,7 +165,7 @@ cpuminer_build () {
 # Run a local cpuminer node
 cpuminer_run_local () {
 
-    echo "Running the cpuminer node.........."
+    echo "Running the cpuminer node..."
     cd ~
     cd cpuminer-mc-yespower
     export WHIVE_ADDR=$(cat ~/.whive/whive.address)
@@ -168,7 +176,7 @@ cpuminer_run_local () {
 # Run a cpuminer node that joins a node
 cpuminer_run_pool () {
 
-    echo "Running cpuminer that joins a pool.........."
+    echo "Running cpuminer that joins a pool..."
     cd ~
     cd cpuminer-mc-yespower
     ./minerd -a yespower -o stratum+tcp://34.73.100.13:3333 -u generateaddress.w1 -t 3
@@ -178,7 +186,7 @@ cpuminer_run_pool () {
 # Remove everything
 clean () {
 
-    echo "Removing unnecessary directories, stopping processes"
+    echo "Removing unnecessary directories, stopping processes..."
 
     if [ -d ~/whive ]; then
         rm -Rf ~/whive
