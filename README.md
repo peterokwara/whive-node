@@ -19,17 +19,17 @@ cd whive-node
 Make the `whive-node.sh` bash script executable by running
 
 ```
-chmod +x whive-node.sh
+chmod +x ./whive_node.sh
 ```
 
 And run the script by running
 
 ```
-./whive-node.sh quickstart
+./whive_node.sh quickstart
 ```
 
 To stop, you can run
 
 ```
-./whive-node.sh stop
+./whive_node.sh stop
 ```
