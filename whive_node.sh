@@ -20,6 +20,8 @@ quickstart () {
 
     whive_run
 
+    sleep 15
+
     whive_address
 
     cpuminer_get
