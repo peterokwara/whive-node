@@ -20,7 +20,7 @@ quickstart () {
 
     whive_run
 
-    sleep 15
+    sleep 120
 
     whive_address
 
