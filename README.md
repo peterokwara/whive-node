@@ -19,7 +19,6 @@
 - [Instructions](#Instructions)
 - [Operations](#Operations)
 - [Backup](#Backup)
-- [Contributing](#versions)
 - [License](#License)
 
 ## Prerequisites
