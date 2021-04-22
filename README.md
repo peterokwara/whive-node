@@ -108,7 +108,7 @@ sudo ls /mnt/
 Once you have confirmed the file has been copied over, you can now unmout by running
 
 ```console
-sudo unmount /mnt/
+sudo umount /mnt/
 ```
 
 ## License
