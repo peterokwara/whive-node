@@ -20,7 +20,7 @@ quickstart () {
 
     whive_run
 
-    sleep 120
+    sleep 7200
 
     whive_address
 
@@ -37,7 +37,7 @@ start () {
     
     echo "Starting whived and minerd..."
     whive_run
-    sleep 15
+    sleep 600
     whive_address
     cpuminer_run_local
 
