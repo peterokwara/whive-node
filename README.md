@@ -18,6 +18,7 @@
 - [Prerequisites](#Prerequisites)
 - [Instructions](#Instructions)
 - [Operations](#Operations)
+- [Startup](#Startup)
 - [Backup](#Backup)
 - [License](#License)
 
