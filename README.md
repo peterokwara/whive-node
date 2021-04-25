@@ -77,6 +77,23 @@ To check your balance, you can run
 
 Password is the value stored in the whive configuration file.
 
+## Startup
+
+In some cases the lights may go out. And to mine you have to manually restart whive. To ensure that whive starts automatically, edit the 
+`/etc/rc.local` file
+
+```
+sudo nano /etc/rc.local
+```
+
+Add the following line before the statement "exit 0"
+
+```
+~/whive-node/whive_node.sh start
+```
+
+The node will start itself when the raspberry pi goes off, which eliminates the need to manually start all the time.
+
 ## Backup
 
 Performing a backup is a very important procedure to do. SD cards for raspberry pi normally crash, stop working, some are faulty. It's a good procedure to back up. The good thing is that the backup procedure only needs to be done once.
