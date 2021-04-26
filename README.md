@@ -90,7 +90,7 @@ sudo nano /etc/rc.local
 Add the following line before the statement `exit 0`. Make sure you leave the `exit 0` statement.
 
 ```
-~/whive-node/whive_node.sh start
+/home/pi/whive-node/whive_node.sh start &
 ```
 
 The node will start itself when the raspberry pi goes off, which eliminates the need to manually start all the time.
