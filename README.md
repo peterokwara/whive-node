@@ -18,7 +18,6 @@
 - [Prerequisites](#Prerequisites)
 - [Instructions](#Instructions)
 - [Operations](#Operations)
-- [Startup](#Startup)
 - [Backup](#Backup)
 - [License](#License)
 
@@ -77,23 +76,6 @@ To check your balance, you can run
 ```
 
 Password is the value stored in the whive configuration file.
-
-## Startup
-
-In some cases the lights may go out. And to mine you have to manually restart whive. To ensure that whive starts automatically, edit the 
-`/etc/rc.local` file
-
-```
-sudo nano /etc/rc.local
-```
-
-Add the following line before the statement `exit 0`. Make sure you leave the `exit 0` statement.
-
-```
-/home/pi/whive-node/whive_node.sh start &
-```
-
-The node will start itself when the raspberry pi goes off, which eliminates the need to manually start all the time.
 
 ## Backup
 
