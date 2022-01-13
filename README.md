@@ -6,13 +6,11 @@
 
   <p align="center">
     A set of scripts to run a whive node. <br>
-   You can read more about this project here https://www.whive.io/.
+   You can read more about this project here https://www.whive.io/. <br>
     <br>
     </p>
 </p>
-
-<br>
-
+> **NB** This code is unnoficial code. Make sure you understand how the scripts work before running it.
 
 ## Table of contents
 - [Prerequisites](#Prerequisites)
