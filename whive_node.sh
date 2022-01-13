@@ -43,6 +43,16 @@ start () {
 
 }
 
+start_pool () {
+    
+    echo "Starting whived and minerd..."
+    whive_run
+    sleep 600
+    whive_address
+    cpuminer_run_pool
+
+}
+
 stop () {
 
     echo "Stopping whived and minerd..."
@@ -230,6 +240,9 @@ case "${command}" in
     ;;
         "start")
     start
+    ;;
+        "pool")
+    start_pool
     ;;
         "balance")
     balance
