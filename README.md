@@ -62,6 +62,12 @@ To resume local mining, you can run
 ./whive_node.sh start
 ```
 
+To run a node that joins an existing pool, you can run
+
+```console
+./whive_node.sh pool
+```
+
 To stop, you can run
 
 ```console
